@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const ModalContainer = styled.div`
-  display: ${(props) => (props.displayIt === true ? "block" : "none")};
+  display: ${(props) => (props.$displayIt === true ? "block" : "none")};
   position: fixed;
   top: 0;
   left: 0;
@@ -20,8 +20,8 @@ const Button = styled.button`
 	font-size: 1rem;
 	font-weight: bold;
 	margin-top: 1rem;
-	border-color: ${(props) => props.bgColour};
-	background-color: ${(props) => props.bgColour};
+	border-color: ${(props) => props.$bgColour};
+	background-color: ${(props) => props.$bgColour};
 	color: ${(props) => props.Color};
 	cursor: pointer;
 `;
@@ -40,7 +40,7 @@ const ModalInfo = styled.div`
 	max-width: 500px;
 	min-width: 300px;
 	padding: 30px;
-    background: ${(props) => props.bgColour};
+    background: ${(props) => props.$bgColour};
 	border-radius: 10px;
 	position: absolute;
 	top: 40%;
@@ -54,7 +54,7 @@ const Message = styled.p`
   font-size: 26px;
   font-weight: 500;
   text-align: center;
-  color: ${(props) => props.Colour};
+  color: ${(props) => props.$Colour};
   background-color: rgb(255, 255, 255, 0);
 `;
 
@@ -78,11 +78,11 @@ function Modal({ display, setDisplay, message, params }) {
     };
 
     return (
-        <ModalContainer displayIt={display}>
+        <ModalContainer $displayIt={display}>
             <Overlay></Overlay>
-            <ModalInfo bgColour={params.bgColour}>
-                <Message Colour={params.textColour}>{message}</Message>
-                <Button bgColour={params.btColour} Colour={params.btTextColour} onClick={toggleModal}>
+            <ModalInfo $bgColour={params.bgColour}>
+                <Message $Colour={params.textColour}>{message}</Message>
+                <Button $bgColour={params.btColour} $Colour={params.btTextColour} onClick={toggleModal}>
                     OK
                 </Button>
             </ModalInfo>

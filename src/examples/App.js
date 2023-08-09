@@ -3,11 +3,11 @@ import Modal from "../lib/components/Modal";
 
 function App() {
   const messageModal = "Exemple";
-  const bgColor = "white";
-  const textColor = "#96ab49";
-  const btColor = "#96ab49";
-  const btTextColor = "white";
-  const paramsModal = { bgColor: bgColor, textColor: textColor, btColor: btColor, btTextColor: btTextColor, link: "" };
+  const bgColour = "white";
+  const textColour = "#96ab49";
+  const btColour = "#96ab49";
+  const btTextColour = "white";
+  const paramsModal = { bgColour: bgColour, textColour: textColour, btColour: btColour, btTextColour: btTextColour, link: "" };
   const [openModal, setOpenModal] = useState(true);
 
   return (

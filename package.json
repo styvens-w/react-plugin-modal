@@ -1,6 +1,6 @@
 {
   "name": "@styvens-w/react-component-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "modale configurable",
   "keywords": [
     "react",
@@ -10,7 +10,6 @@
   "author": {
     "name": "Styvens Wentz"
   },
-  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -26,7 +25,6 @@
   },
   "homepage": "https://github.com/styvens-w/react-plugin-modal#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3"
@@ -58,13 +56,14 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
-    "@babel/core": "^7.22.10",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@babel/preset-env": "^7.22.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2",
     "react-scripts": "^5.0.1",
     "styled-components": "^6.0.7"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

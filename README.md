@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Getting Started with react-component-modal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link [GitHub](https://github.com/styvens-w/react-plugin-modal) and Link [npm](https://www.npmjs.com/package/@styvens-w/react-component-modal).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Definition
 
-### `npm start`
+Modal is a React Component that takes in four props, and returns a div popping up on the screen with a message, and a button to close the popup and revert to a given link if any.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Props :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+@prop {boolean} display -> to display or not the popup.\
+@prop {function} setDisplay -> to toggle the display.\
+@prop {String} message -> message to display.\
+@prop {Object} params -> { bgColour, textColour, btColour, btTextColour, link }
 
-### `npm test`
+#### Params :
+bgColour {string} -> The color of the modal.\
+textColour {string} -> The text color of the modal.\
+btColour {string} -> Button color.\
+btTextColour {string} -> Button text color.\
+link {string} -> Link to the page to display after clicking "Ok".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## How to install ?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install this plugin, go to the root of the project and run the command :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm install @styvens-w/react-component-modal`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## How to Use ?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Exemple :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    import React, { useState } from "react";\
+    import { Modal } from "@styvens-w/react-component-modal";\
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    function Error() {
+        const messageModal = "Error";
+        const bgColour = "white";
+        const textColour = "#96ab49";
+        const btColour = "#96ab49";
+        const btTextColour = "white";
+        const paramsModal = { bgColour: bgColour, textColour: textColour, btColour: btColour, btTextColour: btTextColour, link: "/error" };
+    
+        const [openModal, setOpenModal] = useState(true);
+    
+        return (
+            <Modal display={openModal} setDisplay={setOpenModal} message={errorMessage} params={paramsModal}/>
+        )
+    }
